@@ -11,6 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "scheme": "image-converter",
     "ios": {
       "supportsTablet": true
     },
@@ -18,10 +19,20 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.paulaymanu113.imageconverter"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "46d8adc0-6552-48c5-a8da-fb7b3dad534b"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-asset"
+    ]
   }
 }
