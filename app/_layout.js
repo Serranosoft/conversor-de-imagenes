@@ -12,7 +12,12 @@ SplashScreen.preventAutoHideAsync();
 export default function Layout() {
 
     // Carga de fuentes.
-    const [fontsLoaded] = useFonts({ "madimi": require("../assets/fonts/Madimi.ttf") });
+    const [fontsLoaded] = useFonts({ 
+        "madimi": require("../assets/fonts/Madimi.ttf"),
+        "poppins-regular": require("../assets/fonts/Poppins-Regular.ttf"),
+        "poppins-medium": require("../assets/fonts/Poppins-Medium.ttf"),
+        "poppins-bold": require("../assets/fonts/Poppins-Bold.ttf")
+    });
 
     useEffect(() => {
         if (fontsLoaded) {
@@ -25,13 +30,11 @@ export default function Layout() {
         return null;
     }
 
-    const navigator = useRef();
 
     return (
         <>
-            {/* <Header /> */}
             <GestureHandlerRootView style={{ flex: 1 }}>
-                <Drawer ref={navigator} screenOptions={{
+                <Drawer screenOptions={{
                     header: ({ navigation }) => <Header {...{ navigation }} />
                 }}>
                     <Drawer.Screen name="index" options={{ drawerLabel: "Convertir a HEIC" }} />
