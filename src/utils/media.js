@@ -3,6 +3,7 @@ import * as MediaLibrary from 'expo-media-library';
 
 const ALBUM_NAME = "IMAGENES CONVERTIDAS";
 const PERMISSION_DENIED = "Permiso denegado"
+const SUCCESS = "Imagen guardada en la galería"
 
 /** Encargado de solicitar los permisos necesarios para almacenar el resultado en la galería del dispositivo */
 export async function requestPermissions(conversion) {
@@ -28,6 +29,9 @@ async function save(conversion) {
         } else {
             await MediaLibrary.addAssetsToAlbumAsync([asset], album, false);
         }
+
+        ToastAndroid.showWithGravityAndOffset(SUCCESS, ToastAndroid.LONG, ToastAndroid.BOTTOM, 25, 50);
+
     } catch (error) {
         ToastAndroid.showWithGravityAndOffset(PERMISSION_DENIED, ToastAndroid.LONG, ToastAndroid.BOTTOM, 25, 50);
     }
