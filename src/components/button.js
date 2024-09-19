@@ -1,7 +1,6 @@
 import { StyleSheet, Text } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { ui } from "../utils/styles";
-import Entypo from '@expo/vector-icons/Entypo';
 
 export default function Button({ icon, text, onClick, small }) {
 
@@ -35,5 +34,8 @@ const styles = StyleSheet.create({
     },
     small: {
         transform: [{ scale: 0.7 }]
+    },
+    buttonText: {
+        marginBottom: -4
     }
 })
