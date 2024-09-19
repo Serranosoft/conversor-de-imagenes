@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, ToastAndroid, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import Button from "../src/components/button";
 import { ui } from "../src/utils/styles";
 import Entypo from '@expo/vector-icons/Entypo';
@@ -17,15 +17,15 @@ export default function toJpg() {
     const [progress, setProgress] = useState(0);
 
     useEffect(() => {
-        if (image) fromPNGtoJPG();
+        if (image) convertToJPG();
     }, [image])
 
     useEffect(() => {
         if (conversion) startProgress(setProgress);
     }, [conversion])
 
-    /** Conversión de JPG a PNG */
-    async function fromPNGtoJPG() {
+    /** Conversión a JPG */
+    async function convertToJPG() {
         const asset = Asset.fromModule(image);
         await asset.downloadAsync();
         

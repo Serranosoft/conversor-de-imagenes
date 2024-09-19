@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, ToastAndroid, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import Button from "../src/components/button";
 import { ui } from "../src/utils/styles";
 import Entypo from '@expo/vector-icons/Entypo';
