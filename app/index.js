@@ -4,12 +4,11 @@ import { ui } from "../src/utils/styles";
 import Entypo from '@expo/vector-icons/Entypo';
 import { useEffect, useState } from "react";
 import { FilePicker, GalleryPicker } from "../src/utils/pickers";
-import * as MediaLibrary from 'expo-media-library';
 import { convertImage } from 'react-native-simple-heic2jpg';
 import * as Progress from 'react-native-progress';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import { requestPermissions } from "../src/utils/media";
 
-const ALBUM_NAME = "IMAGENES CONVERTIDAS";
 const MIN_PROGRESS = 1;
 
 export default function Index() {
@@ -36,36 +35,10 @@ export default function Index() {
         }
     }, [conversion])
 
-    /** Encargado de solicitar los permisos necesarios para almacenar el resultado en la galería del dispositivo */
-    async function requestPermissions() {
-        try {
-            const { status } = await MediaLibrary.requestPermissionsAsync(false, ["photo"]);
-            if (status === "granted") {
-                save();
-            } else {
-                ToastAndroid.showWithGravityAndOffset(PERMISSION_DENIED, ToastAndroid.LONG, ToastAndroid.BOTTOM, 25, 50);
-            }
-        } catch (error) {
-            console.log(error);
-            ToastAndroid.showWithGravityAndOffset(PERMISSION_DENIED, ToastAndroid.LONG, ToastAndroid.BOTTOM, 25, 50);
-        }
-    }
-
     /** Conversión de HEIC a JPG */
     async function fromHeicToJPG() {
         const result = await convertImage(image);
         setConversion(result);
-    }
-
-    /** Almacenar en galería */
-    async function save() {
-        const asset = await MediaLibrary.createAssetAsync(conversion);
-        let album = await MediaLibrary.getAlbumAsync(ALBUM_NAME);
-        if (!album) {
-            album = await MediaLibrary.createAlbumAsync(ALBUM_NAME, asset, false);
-        } else {
-            await MediaLibrary.addAssetsToAlbumAsync([asset], album, false);
-        }
     }
 
     useEffect(() => {
@@ -106,7 +79,7 @@ export default function Index() {
                             <Button
                                 text={"Descargar"}
                                 icon={<Entypo name="download" size={24} color="#fff" />}
-                                onClick={requestPermissions}
+                                onClick={() => requestPermissions(conversion)}
                             />
                         </>
 
