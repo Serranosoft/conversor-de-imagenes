@@ -1,6 +1,6 @@
 import { SplashScreen, Stack } from "expo-router";
 import { View, StatusBar, StyleSheet } from "react-native";
-import { useEffect, useRef  } from "react";
+import { useEffect, useRef } from "react";
 import { useFonts } from "expo-font";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Drawer } from 'expo-router/drawer';
@@ -12,7 +12,7 @@ SplashScreen.preventAutoHideAsync();
 export default function Layout() {
 
     // Carga de fuentes.
-    const [fontsLoaded] = useFonts({ 
+    const [fontsLoaded] = useFonts({
         "madimi": require("../assets/fonts/Madimi.ttf"),
         "poppins-regular": require("../assets/fonts/Poppins-Regular.ttf"),
         "poppins-medium": require("../assets/fonts/Poppins-Medium.ttf"),
@@ -35,9 +35,27 @@ export default function Layout() {
         <>
             <GestureHandlerRootView style={{ flex: 1 }}>
                 <Drawer screenOptions={{
+                    drawerStyle: {
+                        backgroundColor: "#06062A",
+                        width: 240,
+                        borderRightWidth: 1,
+                        borderRightColor: "#fff",
+                        justifyContent: "center",
+                        paddingTop: 32,
+                        gap: 24,
+                    },
+                    drawerInactiveTintColor: "#fff",
                     header: ({ navigation }) => <Header {...{ navigation }} />
                 }}>
-                    <Drawer.Screen name="index" options={{ drawerLabel: "Convertir a HEIC" }} />
+                    <Drawer.Screen name="index" options={{
+                        drawerLabel: "HEIC a JPG",
+                    }} />
+                    <Drawer.Screen name="JpgToPng" options={{
+                        drawerLabel: "JPG a PNG",
+                    }} />
+                    <Drawer.Screen name="PngToJpg" options={{
+                        drawerLabel: "PNG a JPG",
+                    }} />
                 </Drawer>
 
             </GestureHandlerRootView>
