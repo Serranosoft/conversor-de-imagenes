@@ -49,13 +49,13 @@ export default function Layout() {
                         drawerLabel: "Convertir HEIC a JPG",
                     }} />
                     <Drawer.Screen name="toPng" options={{
-                        drawerLabel: "Convertir a PNG",
+                        drawerLabel: "Convertir Imagen a PNG",
                     }} />
                     <Drawer.Screen name="toJpg" options={{
-                        drawerLabel: "Convertir a JPG",
+                        drawerLabel: "Convertir Imagen a JPG",
                     }} />
                     <Drawer.Screen name="toWebp" options={{
-                        drawerLabel: "Convertir a WEBP",
+                        drawerLabel: "Convertir Imagen a WEBP",
                     }} />
                    
                 </Drawer>
