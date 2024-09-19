@@ -9,9 +9,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import { requestPermissions } from "../src/utils/media";
 import { manipulateAsync, SaveFormat } from "expo-image-manipulator";
 import { Asset } from "expo-asset";
-import { startProgress } from "../src/utils/progress";
-
-const MIN_PROGRESS = 1;
+import { MIN_PROGRESS, startProgress } from "../src/utils/progress";
 
 export default function toPng() {
 

@@ -9,7 +9,7 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import { requestPermissions } from "../src/utils/media";
 import { manipulateAsync, SaveFormat } from "expo-image-manipulator";
 import { Asset } from "expo-asset";
-import { startProgress } from "../src/utils/progress";
+import { MIN_PROGRESS, startProgress } from "../src/utils/progress";
 
 export default function toJpg() {
     const [image, setImage] = useState(null);
@@ -40,7 +40,7 @@ export default function toJpg() {
         <>
             <View style={styles.container}>
                 <View style={styles.hero}>
-                    <Text style={ui.h2}>Convierte tu imagen a PNG</Text>
+                    <Text style={ui.h2}>Convierte tu imagen a JPG</Text>
                     <View style={styles.actions}>
                         <Button
                             text={"Abrir galería"}

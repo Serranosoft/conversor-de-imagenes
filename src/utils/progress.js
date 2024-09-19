@@ -1,3 +1,5 @@
+export const MIN_PROGRESS = 1;
+ 
 export function startProgress(setProgress) {
 
     let time = 0;
