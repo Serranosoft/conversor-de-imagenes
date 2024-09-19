@@ -8,6 +8,7 @@ import { convertImage } from 'react-native-simple-heic2jpg';
 import * as Progress from 'react-native-progress';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { requestPermissions } from "../src/utils/media";
+import { startProgress } from "../src/utils/progress";
 
 const MIN_PROGRESS = 1;
 
@@ -22,17 +23,7 @@ export default function Index() {
     }, [image])
 
     useEffect(() => {
-        if (conversion) {
-            let time = 0;
-            const interval = setInterval(() => {
-                time += 0.1;
-                if (time <= 1.1) {
-                    setProgress(time);
-                } else {
-                    clearInterval(interval);
-                }
-            }, 100);
-        }
+        if (conversion) startProgress(setProgress);
     }, [conversion])
 
     /** Conversión de HEIC a JPG */
@@ -40,10 +31,6 @@ export default function Index() {
         const result = await convertImage(image);
         setConversion(result);
     }
-
-    useEffect(() => {
-        console.log(image);
-    }, [image])
 
     return (
         <>

@@ -5,6 +5,7 @@ const ALBUM_NAME = "IMAGENES CONVERTIDAS";
 
 /** Encargado de solicitar los permisos necesarios para almacenar el resultado en la galería del dispositivo */
 export async function requestPermissions(conversion) {
+    console.log(conversion);
     try {
         const { status } = await MediaLibrary.requestPermissionsAsync(false, ["photo"]);
         if (status === "granted") {
