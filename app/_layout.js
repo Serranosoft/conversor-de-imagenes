@@ -1,10 +1,9 @@
-import { SplashScreen, Stack } from "expo-router";
-import { View, StatusBar, StyleSheet } from "react-native";
-import { useEffect, useRef } from "react";
+import { SplashScreen } from "expo-router";
+import { StatusBar, StyleSheet } from "react-native";
+import { useEffect } from "react";
 import { useFonts } from "expo-font";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Drawer } from 'expo-router/drawer';
-import Ionicons from '@expo/vector-icons/Ionicons';
 import Header from "../src/layout/header/header";
 
 SplashScreen.preventAutoHideAsync();
@@ -47,13 +46,16 @@ export default function Layout() {
                     header: ({ navigation }) => <Header {...{ navigation }} />
                 }}>
                     <Drawer.Screen name="index" options={{
-                        drawerLabel: "HEIC a JPG",
+                        drawerLabel: "Convertir HEIC a JPG",
                     }} />
                     <Drawer.Screen name="toPng" options={{
-                        drawerLabel: "JPG/JPEG a PNG",
+                        drawerLabel: "Convertir a PNG",
                     }} />
                     <Drawer.Screen name="toJpg" options={{
-                        drawerLabel: "PNG/JPEG a JPG",
+                        drawerLabel: "Convertir a JPG",
+                    }} />
+                    <Drawer.Screen name="toWebp" options={{
+                        drawerLabel: "Convertir a WEBP",
                     }} />
                    
                 </Drawer>
