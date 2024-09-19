@@ -4,7 +4,6 @@ import { ui } from "../src/utils/styles";
 import Entypo from '@expo/vector-icons/Entypo';
 import { useEffect, useState } from "react";
 import { FilePicker, GalleryPicker } from "../src/utils/pickers";
-import { convertImage } from 'react-native-simple-heic2jpg';
 import * as Progress from 'react-native-progress';
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { requestPermissions } from "../src/utils/media";
@@ -14,7 +13,7 @@ import { startProgress } from "../src/utils/progress";
 
 const MIN_PROGRESS = 1;
 
-export default function JpgToPng() {
+export default function toPng() {
 
     const [image, setImage] = useState(null);
     const [conversion, setConversion] = useState(null);
@@ -44,7 +43,7 @@ export default function JpgToPng() {
         <>
             <View style={styles.container}>
                 <View style={styles.hero}>
-                    <Text style={ui.h2}>Convierte tu imagen JPG a a PNG</Text>
+                    <Text style={ui.h2}>Convierte tu imagen a PNG</Text>
                     <View style={styles.actions}>
                         <Button
                             text={"Abrir galería"}

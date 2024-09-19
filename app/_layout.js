@@ -13,7 +13,6 @@ export default function Layout() {
 
     // Carga de fuentes.
     const [fontsLoaded] = useFonts({
-        "madimi": require("../assets/fonts/Madimi.ttf"),
         "poppins-regular": require("../assets/fonts/Poppins-Regular.ttf"),
         "poppins-medium": require("../assets/fonts/Poppins-Medium.ttf"),
         "poppins-bold": require("../assets/fonts/Poppins-Bold.ttf")
@@ -50,12 +49,13 @@ export default function Layout() {
                     <Drawer.Screen name="index" options={{
                         drawerLabel: "HEIC a JPG",
                     }} />
-                    <Drawer.Screen name="JpgToPng" options={{
-                        drawerLabel: "JPG a PNG",
+                    <Drawer.Screen name="toPng" options={{
+                        drawerLabel: "JPG/JPEG a PNG",
                     }} />
-                    <Drawer.Screen name="PngToJpg" options={{
-                        drawerLabel: "PNG a JPG",
+                    <Drawer.Screen name="toJpg" options={{
+                        drawerLabel: "PNG/JPEG a JPG",
                     }} />
+                   
                 </Drawer>
 
             </GestureHandlerRootView>
