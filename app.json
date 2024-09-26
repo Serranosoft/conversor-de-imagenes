@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "image-converter",
+    "name": "Convertidor de imágenes HEIC",
     "slug": "image-converter",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/convertidor-imagenes-app.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash-convertidor-imagenes.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,7 +17,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/convertidor-imagenes-app.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.paulaymanu113.imageconverter"
